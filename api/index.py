@@ -5,9 +5,11 @@ from io import BytesIO
 from langchain_community.llms import Ollama
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
+ 
 llm = Ollama(model="llama2")
 
 app = FastAPI()
+
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", "You will summarize the following PDF"),
@@ -28,6 +30,7 @@ async def get_pdf_text(url: str):
     for page in range(len(pdf.pages)):
         text += pdf.pages[page].extract_text()
     return {"text": text}
+ 
 
 @app.get("/api/ask_ollama")
 async def ask_ollama(question: str, pdf_content: str):
@@ -37,6 +40,5 @@ async def ask_ollama(question: str, pdf_content: str):
         ("user", question)
     ])
     chain = prompt | llm | output_parser
-
-    result = chain.invoke({"input": question})
-    return {"answer": result}
+    result = chain.invoke({})
+    return {"result": result}
