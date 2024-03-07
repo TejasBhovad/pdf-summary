@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { getUserByEmail } from "@/db/queries/user";
 import { useSession } from "next-auth/react";
-import { data } from "autoprefixer";
 
 const Page = () => {
   const { data: session } = useSession();
@@ -26,7 +25,7 @@ const Page = () => {
   }, [email]);
 
   return (
-    <div>
+    <div className="py-2 px-4">
       Page
       {isMounted && user && <div>{JSON.stringify(user)}</div>}
     </div>
