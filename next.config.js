@@ -2,6 +2,11 @@
 const nextConfig = {
   rewrites: async () => {
     return [
+      // Add this rewrite rule at the top of the array
+      {
+        source: "/api/auth/:path*",
+        destination: "/api/auth/:path*",
+      },
       {
         source: "/api/:path*",
         destination:
