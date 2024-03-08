@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import SignInButton from "./auth/sign-in";
 import PDFButton from "./pdf-button";
+import DrawerHistory from "./drawer-history";
 import Index from "./logos/Index";
 import SignOutButton from "./auth/sign-out";
 import { useSession } from "next-auth/react";
@@ -55,7 +56,8 @@ const Navbar = () => {
       <div className="w-1/2 flex justify-end h-full items-center">
         {session ? (
           <div className="flex gap-4 h-full items-center">
-            {/* if pathname is not empty render  */}
+            <DrawerHistory />
+            {/* if pathname is not empty render  */}{" "}
             {pathname ? (
               <div className="">
                 <a
@@ -69,7 +71,6 @@ const Navbar = () => {
             ) : (
               <PDFButton userID={userID} />
             )}
-
             <SignOutButton />
           </div>
         ) : (

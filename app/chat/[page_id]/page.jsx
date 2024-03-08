@@ -1,4 +1,5 @@
 "use client";
+import Loading from "./loading";
 import { motion } from "framer-motion";
 import { getSessionByPageId } from "@/db/queries/session";
 import { getUserByEmail } from "@/db/queries/user";
@@ -72,7 +73,7 @@ const Page = ({ params }) => {
   };
 
   if (status === "loading") {
-    return <div className="px-8 py-6">Loading...</div>;
+    return <Loading />;
   }
 
   return (

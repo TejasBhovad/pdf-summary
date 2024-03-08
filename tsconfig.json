@@ -37,7 +37,7 @@
     "app/page.jsx",
     "app/layout.jsx",
     ".next/types/**/*.ts"
-, "lib/utils.ts", "components/ui/use-toast.ts"  ],
+, "lib/utils.ts", "components/ui/use-toast.js"  ],
   "exclude": [
     "node_modules"
   ]

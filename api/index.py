@@ -18,9 +18,6 @@ prompt = ChatPromptTemplate.from_messages([
 output_parser = StrOutputParser()
 chain = prompt | llm | output_parser
 
-@app.get("/api/sum")
-def sum(a: int, b: int):
-    return {"sum": a + b}
 
 @app.get("/api/pdf_text")
 async def get_pdf_text(url: str):

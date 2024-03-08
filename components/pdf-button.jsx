@@ -14,7 +14,7 @@ import Sparkles from "./logos/Sparkles";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-const PDFButton = ({ userID }) => {
+const PDFButton = ({ userID, type = "top" }) => {
   const router = useRouter();
   const [pdf, setPdf] = useState(null);
   const [user, setUser] = useState(userID);
@@ -56,7 +56,11 @@ const PDFButton = ({ userID }) => {
       <DialogTrigger className="h-10 px-4 py-2 text-sm font-medium rounded-md border-black border-opacity-10 border-[1px] bg-black bg-opacity-0 hover:bg-opacity-[7.5%]">
         Upload PDF
       </DialogTrigger>
-      <DialogContent className="w-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md flex flex-col items-center justify-center px-8 py-6">
+      <DialogContent
+        className={`absolute w-auto ${
+          type === "top" ? "top-1/2" : "top-3/4"
+        } left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md flex flex-col items-center justify-center px-8 py-6`}
+      >
         <DialogHeader className="mb-6">
           <DialogTitle>Upload PDF</DialogTitle>
           <DialogDescription>Upload a PDF to get started</DialogDescription>

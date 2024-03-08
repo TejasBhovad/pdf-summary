@@ -25,9 +25,12 @@ const Page = () => {
   }, [email]);
 
   return (
-    <div className="py-2 px-4">
-      Page
-      {isMounted && user && <div>{JSON.stringify(user)}</div>}
+    <div className="py-2 px-4 w-full h-full items-center flex justify-center">
+      <div className="max-w-1280 max-h-1280 w-full h-full items-center flex justify-center">
+        <h1 className="py-8 transition-all px-4 text-center font-extrabold text-transparent text-4xl sm:text-7xl bg-clip-text bg-gradient-to-r from-slate-500 to-slate-800">
+          Summarize PDFs in minutes
+        </h1>
+      </div>
     </div>
   );
 };
