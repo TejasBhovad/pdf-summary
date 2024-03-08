@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import PDFButton from "./pdf-button";
 import { getUserByEmail } from "@/db/queries/user";
 import { useSession } from "next-auth/react";
 import Link from "next/link";

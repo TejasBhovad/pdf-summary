@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-
+import { getPDFContent, askOllama } from "@/db/queries/local";
 const Page = () => {
   const [link, setLink] = useState(
     "https://utfs.io/f/6e1b32d0-6ebf-4203-9b06-a02cbbf75ae3-twehpl.pdf"
@@ -13,19 +13,16 @@ const Page = () => {
 
   const fetchText = async () => {
     setIsLoading(true);
-    const res = await fetch(`api/pdf_text?url=${link}`);
-    const data = await res.json();
-    setText(data.text);
+    const text = await getPDFContent(link);
+    setText(text);
     setIsLoading(false);
   };
 
   const fetchResponse = async () => {
     setIsLoading(true);
-    const response = await fetch(
-      `api/ask_ollama?question=${question}&pdf_content=${text}`
-    );
-    const data = await response.json();
-    setResponse(data.result);
+    const res = await askOllama(question, text);
+    setResponse(res);
+
     setIsLoading(false);
   };
 

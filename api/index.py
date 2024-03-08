@@ -31,12 +31,16 @@ async def get_pdf_text(url: str):
         text += pdf.pages[page].extract_text()
     return {"text": text}
  
+import re
 
+def remove_symbols(input_string: str) -> str:
+    return re.sub(r'\W+', ' ', input_string)
 @app.get("/api/ask_ollama")
 async def ask_ollama(question: str, pdf_content: str):
+    clean_pdf_content = remove_symbols(pdf_content)
     prompt = ChatPromptTemplate.from_messages([
-        ("system", "You will summarize the following PDF"),
-        ("user", pdf_content),
+        ("system", "You will summarize the following PDF precisely."),
+        ("user", clean_pdf_content),
         ("user", question)
     ])
     chain = prompt | llm | output_parser
