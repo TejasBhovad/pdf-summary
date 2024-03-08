@@ -2,7 +2,7 @@
 
 Takes in PDF and gives out a UI for User to ask questions and get answers from the PDF.
 
-[![Demo Video](https://img.youtube.com/vi/2SJzyb4ov00/0.jpg)](https://www.youtube.com/watch?v=2SJzyb4ov00)
+https://github.com/TejasBhovad/pdf-summary/assets/107751658/a266f1be-2673-45da-b41f-a521f441db6f
 
 > The project is live at [https://pdf-crunch.vercel.app/](https://pdf-crunch.vercel.app/) but because it uses Ollama which is run locally, only frontend is live.
 
@@ -26,6 +26,9 @@ Takes in PDF and gives out a UI for User to ask questions and get answers from t
 - add API KEYS in `.env.local` files
 
 ## API Endpoints
+
+
+
 
 - ` api/pdf_text` : Takes in a PDF and returns the text in the PDF
 - `api/ask_ollama` : Takes in a question and returns the answer from the PDF
