@@ -2,6 +2,10 @@
 
 Takes in PDF and gives out a UI for User to ask questions and get answers from the PDF.
 
+[![Demo Video](https://img.youtube.com/vi/2SJzyb4ov00/0.jpg)](https://www.youtube.com/watch?v=2SJzyb4ov00)
+
+> The project is live at [https://pdf-crunch.vercel.app/](https://pdf-crunch.vercel.app/) but because it uses Ollama which is run locally, only frontend is live.
+
 ## Tech used
 
 - NextJS (Meta Framework for React)
@@ -19,6 +23,7 @@ Takes in PDF and gives out a UI for User to ask questions and get answers from t
 - Clone the repo
 - Run `npm install`
 - Run `npm run dev`
+- add API KEYS in `.env.local` files
 
 ## API Endpoints
 

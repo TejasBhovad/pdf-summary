@@ -2,18 +2,20 @@
 
 import { signIn } from "next-auth/react";
 import { options } from "app/api/auth/[...nextauth]/options";
-
+import Index from "@/components/logos/Index";
 const Dashboard = () => {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <div className="w-108 flex justify-center px-10 py-20 bg-secondary rounded-md">
         <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-2">
-            <span className="text-accent text-4xl px-1 gradient-text ">
-              Let&apos;s Get Started
-            </span>
-            <span className="text-utility text-gray-300 font-normal text-sm px-1.5">
-              Sign in to create and share soundboards for free.
+            <div className="w-full items-center justify-center flex flex-col gap-2">
+              <Index />
+              <span className="font-semibold text-xl">PDF Crunch</span>
+            </div>
+
+            <span className="text-black font-normal text-sm px-1.5">
+              Welcome to PDF Crunch. Please sign in to continue.
             </span>
           </div>
           <div className="text-text py-4 gap-6 flex-col flex items-center">
